@@ -9,28 +9,22 @@ def check(number) :
 
 
 num = int(input())
-for i in range(num) :
-    num2 = int(input())
-    list = []
-    result = []
-    for j in range(num2) :
-        if check(j) == True :
-            list.append(j)
-        else :
-            pass
 
-    for h in range(0, len(list)-1) :
-        if list[h] * 2  == num2 :
-            result = [list[h], list[h]]
+for i in range(num) :
+    result = [0,0]
+    num2 = int(input())
+    a = int(num2 / 2)
+    b = int(num2 / 2)
+    if a + b == num2 :
+        if check(a) == True :
+            result = [a, b]
         else :
-            min = 100000
-            for k in range(h+1,len(list)) :
-                if list[h]+list[k] == num2 :
-                    if min > list[k]-list[h] :
-                        min = list[k]-list[h]
-                        result = [list[h],list[k]]
-                else :
-                    pass
-         
-    print(result)
-        
+            while result == [0,0] :
+                a = a - 1
+                b = b + 1
+                if(a + b == num2) :
+                    if check(a) == True and check(b) == True:
+                        result = [a,b]
+    print(result[0], result[1]) 
+    
+    
