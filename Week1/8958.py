@@ -9,7 +9,6 @@ for i in range(0, num) :
         if temp[i] == "O" :
             zero += 1
             result += zero
-            
         else :
             zero = 0
     
