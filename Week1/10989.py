@@ -1,7 +1,7 @@
 import sys
 
 n = int(input())
-list = [0] *10001
+list = [0] * 10001
 
 
 for i in range(n) :
