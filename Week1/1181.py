@@ -9,7 +9,7 @@ for i in range(0, n) :
     
 
 num = list(set(num))
-print(type(num))
+
 num.sort()
 
 

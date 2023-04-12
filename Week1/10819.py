@@ -9,7 +9,7 @@ def check(list) :
     return count
 num = int(input())
 data = list(map(int ,input().split()))
-print(data)
+
 list = list(permutations(data,num))
 
 all_data = []
