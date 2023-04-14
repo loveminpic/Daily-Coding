@@ -4,62 +4,35 @@ num = int(sys.stdin.readline().strip())
 liq = list(map(int,sys.stdin.readline().split()))
 
 liq.sort()
-start = 0
-end = num
-turn = 1000000
-temp = num-1
 
-while start <= end :
+left = 0
+right = num - 1
 
-   mid = (start + end) // 2
-    
-   if liq[mid] > 0 :
-       if turn > liq[mid] - 0 :
-            turn = liq[mid] - 0
-            temp = mid
-            end = mid - 1
-       else :
-            break
-        
-   elif liq[mid] < 0 :
-       if turn > 0 - liq[mid] :
-            turn = 0 - liq[mid]
-            temp = mid
-            start = mid + 1
-       else :
-           break
+temp1 = 10000
+temp2 = 10000
 
-   else :
-       temp = mid
-       break
+s = float("inf")
 
-mid = liq[temp]
+while left <= right :
+    m = liq[left] + liq[right]
+    if left == right :
+        break
+    if m < 0 :
+        if abs(s) > abs(m):
+            temp1 = liq[left]
+            temp2 = liq[right]
+            s = abs(m)
+        left += 1
+    elif m > 0 :
+        if abs(s) > abs(m):
+            temp1 = liq[left]
+            temp2 = liq[right]
+            s = m
+        right -= 1
+    elif m == 0 :
+        temp1 =  liq[left]    
+        temp2 =  liq[right]
+        s = m
+        break
 
-a = abs(liq[temp] + liq[temp+1])
-b = abs(liq[temp-1] + liq[temp])
-c = abs(liq[0] + liq[num-1])
-
-if a < b:
-    if a < c :
-        print(liq[temp] ,liq[temp+1])
-    else :
-        print(liq[0] , liq[num-1])
-else :
-    if b < c :
-        print(liq[temp-1] , liq[temp])
-    else :
-        print(liq[0] , liq[num-1])
-
-
-
-# if liq[temp] <= 0 :
-#     if abs(liq[temp] + liq[temp+1]) > abs(liq[0] + liq[num-1]) :
-#         print(liq[0], liq[num-1])
-#     else :
-#         print(liq[temp],liq[temp+1])
-# else :
-#     if abs(liq[temp] + liq[temp-1]) > abs(liq[0] + liq[num-1]) :
-#         print(liq[0], liq[num-1])
-#     else :
-#         print(liq[temp], liq[temp-1])
-   
+print(temp1, temp2)
