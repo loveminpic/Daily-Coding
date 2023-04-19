@@ -31,7 +31,7 @@ def heap_push(dequeue):
     i = len(dequeue) - 1 
     
     while i > 0:
-        parent = (i -1 )// 2 
+        parent = (i -1)// 2 
         if dequeue[i] > dequeue[parent]:
             dequeue[parent], dequeue[i] = dequeue[i], dequeue[parent]
             i = parent
