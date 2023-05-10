@@ -12,3 +12,6 @@ typedef struct BinaryTree {
 BinaryTree *create_bts();
 void insert_bts(BinaryTree *bts, int data);
 TreeNode *insert_node(TreeNode *node, int data);
+void preorder(TreeNode *node);
+void inorder(TreeNode *node);
+void postorder(TreeNode *node);
