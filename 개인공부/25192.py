@@ -5,7 +5,7 @@ input = sys.stdin.readline
 num = int(input().strip())
 count = 0
 arr = set()
-result = []
+
 for i in range(num) :
     temp = input().strip()
     if temp == "ENTER" :
