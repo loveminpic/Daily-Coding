@@ -21,11 +21,5 @@ for i in range(N) :
                 count += 1
             else :
                 break
-    
-    # for j in range(a_len) :
-    #     for g in range(b_len) :
-    #         if b_list[g] < a_list[j] :
-    #             count += b_len - g 
-    #             break
 
     print(count)
