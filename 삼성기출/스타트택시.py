@@ -11,12 +11,6 @@ customer_list = [list(map(int, input().split())) for i in range(customer_num)]
 taxi_x -= 1
 taxi_y -= 1
 
-for i in range(N):
-    for j in range(N):
-        if town_map[i][j] == 0:
-            town_map[i][j] = True
-        else:
-            town_map[i][j] = False
 
 for i in range(len(customer_list)):
     for j in range(4):
@@ -43,7 +37,7 @@ def short_distance(start_x, start_y):
 
             if x < 0 or y < 0 or x >= N or y >= N:
                 continue
-            if town_map[x][y] == False or visited[x][y] != 0:
+            if town_map[x][y] == 1 or visited[x][y] != 0:
                 continue
 
             visited[x][y] = visited[real_x][real_y] + 1
